@@ -10,7 +10,6 @@ export default function TreeCount() {
   const [loading, setLoading] = useState(false);
   const [dragActive, setDragActive] = useState(false);
   const [analyzing, setAnalyzing] = useState(false);
-
   const handleDrag = useCallback((e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -73,7 +72,7 @@ export default function TreeCount() {
         setPreprocessedImage(reader.result);
 
         try {
-          const response = await fetch('http://localhost:5000/api/tree-count/detect', {
+            const response = await fetch('https://forestiqfinal-backend.onrender.com/api/tree-count/detect', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ image: reader.result }),
