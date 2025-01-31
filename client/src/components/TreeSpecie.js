@@ -71,7 +71,7 @@ export default function TreeSpecie() {
             setAnalyzing(true);
 
             const base64 = await toBase64(file);
-            const response = await axios.post('http://localhost:5000/api/tree-species/detect', {
+            const response = await axios.post('https://forestiqfinal-backend.onrender.com/api/tree-species/detect', {
                 imageBase64: base64.split(',')[1],
             });
 
